@@ -3,8 +3,8 @@ package ua.edu.ucu.tempseries;
 import java.util.InputMismatchException;
 
 public class TemperatureSeriesAnalysis {
-    private double[] tempSeries = {};
     private static final double MIN_POSSIBLE = -273.0;
+    private double[] tempSeries = {};
     private int lenSeries;
     public TemperatureSeriesAnalysis() {
     }
