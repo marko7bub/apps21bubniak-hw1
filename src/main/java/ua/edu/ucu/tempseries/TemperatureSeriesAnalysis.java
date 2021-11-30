@@ -17,7 +17,7 @@ public class TemperatureSeriesAnalysis {
             }
         }
         this.lenSeries = temperatureSeries.length;
-        this.tempSeries = temperatureSeries;
+        this.tempSeries = temperatureSeries.clone();
     }
 
     public double average() {
