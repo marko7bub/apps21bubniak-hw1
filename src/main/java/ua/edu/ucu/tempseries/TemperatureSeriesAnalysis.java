@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 
 public class TemperatureSeriesAnalysis {
     private double[] tempSeries = {};
-    private double minPossible = -273.0;
+    private static final double MIN_POSSIBLE = -273.0;
     private int lenSeries;
     public TemperatureSeriesAnalysis() {
     }
@@ -12,12 +12,12 @@ public class TemperatureSeriesAnalysis {
 
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
         for (double value : temperatureSeries) {
-            if (value < minPossible) {
+            if (value < MIN_POSSIBLE) {
                 throw new InputMismatchException();
             }
         }
-        lenSeries = temperatureSeries.length;
-        tempSeries = temperatureSeries;
+        this.lenSeries = temperatureSeries.length;
+        this.tempSeries = temperatureSeries;
     }
 
     public double average() {
@@ -175,12 +175,6 @@ public class TemperatureSeriesAnalysis {
             expandedSum = expandedSum + value;
         }
         return expandedSum;
-    }
-
-    public static void main(String[] args) {
-        double[] tempseries = {-2.0, 2.0, 5.0, 6.0, 8.0};
-        TemperatureSeriesAnalysis tmp = new TemperatureSeriesAnalysis(tempseries);
-        System.out.println(tmp.findTempClosestToZero());
     }
 }
 

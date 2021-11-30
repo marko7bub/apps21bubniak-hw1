@@ -44,7 +44,7 @@ public class TemperatureSeriesAnalysisTest {
 
     @Test
     public void closesttozeroTest(){
-        double[] temperatureSeries = {1.0, 36.6, 120.0, 5.0, 3.4};
+        double[] temperatureSeries = {- 1.0, 1.0, 36.6, 120.0, 5.0, 3.4};
         TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
         double expResult = 1.0;
         double actualResult = seriesAnalysis.findTempClosestToZero();
